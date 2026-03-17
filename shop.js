@@ -1,26 +1,22 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const buyButton = document.getElementById('buyButton'); 
-  if(!buyButton) return;
-
+document.addEventListener("DOMContentLoaded", () => {
+  const buyButton = document.getElementById("buyButton");
   const urlParams = new URLSearchParams(window.location.search);
-  const base64Scene = urlParams.get('scene') || '';
+  let sceneBuyURL = urlParams.get("buyURL");
 
-  let sceneBuyURL = '';
-  if(base64Scene){
+  if(sceneBuyURL){
     try {
-      const decodedScene = atob(decodeURIComponent(base64Scene));
-      const params = new URLSearchParams(decodedScene.split('?')[1]);
-      sceneBuyURL = params.get('buyURL') ? atob(params.get('buyURL')) : '';
+      sceneBuyURL = atob(decodeURIComponent(sceneBuyURL));
     } catch(e){
-      console.error('Error decodificando buyURL:', e);
+      console.warn("No se pudo decodificar buyURL:", e);
+      sceneBuyURL = '';
     }
   }
 
   if(sceneBuyURL && sceneBuyURL.startsWith('https://')){
     buyButton.style.display = 'inline-block';
-    buyButton.addEventListener('click', () => window.open(sceneBuyURL, '_blank'));
+    buyButton.onclick = () => window.open(sceneBuyURL, '_blank');
   } else {
-    buyButton.style.display = 'none';
-    buyButton.addEventListener('click', () => alert('Producto no disponible'));
+    buyButton.style.display = 'inline-block';
+    buyButton.onclick = () => alert("Producto no disponible");
   }
 });
