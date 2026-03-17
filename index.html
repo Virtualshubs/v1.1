@@ -23,13 +23,16 @@
     <input type="number" id="productQuantity" value="1" min="1">
     <button id="buyButton">Comprar</button>
     <button class="save-button" id="save-button">Guarda o comparte tu diseño</button>
+    <button id="editButton">Volver a personalizar</button>
   </div>
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const buyButton = document.getElementById("buyButton");
+  const editButton = document.getElementById("editButton");
   buyButton.style.display = "inline-block"; // siempre visible
+  editButton.style.display = "inline-block"; // siempre visible
 
   const urlParams = new URLSearchParams(window.location.search);
   const sceneParam = urlParams.get("scene");
@@ -37,28 +40,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (sceneParam) {
     try {
-      // 1️⃣ Decodificamos scene Base64
-      const decodedScene = atob(decodeURIComponent(sceneParam));
-
-      // 2️⃣ Extraemos buyURL de la URL interna de la escena
+      const decodedScene = decodeURIComponent(sceneParam);
       const sceneURL = new URL(decodedScene);
       const buyParam = sceneURL.searchParams.get("buyURL");
-
       if (buyParam) {
-        sceneBuyURL = buyParam; // ya está legible, no hacemos más decode
+        sceneBuyURL = decodeURIComponent(buyParam);
       }
     } catch (e) {
       console.warn("No se pudo decodificar buyURL desde scene:", e);
     }
   }
 
-  // 3️⃣ Configuramos acción del botón
+  // Botón Comprar
   buyButton.onclick = () => {
     if (sceneBuyURL && sceneBuyURL.startsWith("https://")) {
       window.open(sceneBuyURL, "_blank");
     } else {
       alert("Producto no disponible");
     }
+  };
+
+  // Botón Volver a personalizar
+  editButton.onclick = () => {
+    if (!sceneParam) {
+      alert("No hay escena disponible para personalizar");
+      return;
+    }
+    // Reemplazamos la base URL
+    const newURL = window.location.href.replace("https://product.3dtwins.tech/", "https://scene.3dtwins.tech/");
+    window.open(newURL, "_blank");
   };
 });
 </script>
