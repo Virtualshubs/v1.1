@@ -1,1 +1,29 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>3D Twins product page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.3dtwins.tech/sdk.js"></script>
+<script src="https://cdn.3dtwins.tech/product.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+ <link rel="icon" href="https://viewer.3dtwins.tech/puntero_3dtwinsStar.png" type="image/x-icon"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="product-page">
+  <div id="vh-container"></div>
+  <div class="product-info">
+    <h1 id="product-name">Nombre del producto</h1>  
+    <p id="product-author">Autor / marca / fabricante: </p>
+     <p id="colors-tipe">Colores seleccionados</p>  
+   <div id="colors" class="colors-container"></div>
+    <label for="productQuantity">Cantidad:</label>
+    <input type="number" id="productQuantity" value="1" min="1">
+    <button class="buy-button" id="buy-button">Comprar</button>
+    <button class="save-button" id="save-button">Guarda o comparte tu diseño</button>
+  </div>
+</div>
+</body>
+</html>
