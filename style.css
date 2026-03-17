@@ -1,1 +1,138 @@
+/* ===== BODY ===== */
+body{
+  margin:0;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  background-color:transparent;
+  color:#111;
+}
 
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.product-page{
+  display:flex;
+  width:100%;
+  max-width:1400px;
+  margin:auto;
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* ===== VISOR 3D ===== */
+#vh-container{
+  flex:2;
+  background:#eaeaea;
+  margin:20px 0;
+  border-radius:10px;
+  position:relative;
+  height:75vh;       /* 70% de la pantalla */
+  min-height:650px;  /* nunca menos de 600px en desktop */
+  max-height:900px;  /* máximo para no tapar datos */
+  overflow:hidden;
+  touch-action:none;  /* evita conflictos de scroll en mobile */
+}
+
+/* ===== DATOS DEL PRODUCTO ===== */
+.product-info{
+  flex:1;
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+/* TITULO */
+.product-info h1{
+  font-size:2em;
+  margin:0;
+}
+
+/* DESCRIPCIÓN */
+.product-info p{
+  font-size:1em;
+  color:#555;
+  margin:0;
+}
+
+/* COLORES */
+.colors-container{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.color-circle{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  border:2px solid #ccc;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.color-circle.selected{
+  border:2px solid #111;
+}
+
+/* BOTONES */
+.buy-button,
+.save-button{
+  padding:12px;
+  font-size:1em;
+  border:none;
+  cursor:pointer;
+  border-radius:6px;
+}
+
+.buy-button{
+  background:#111;
+  color:#fff;
+}
+
+.save-button{
+  background:#fff;
+  color:#111;
+  border:1px solid #111;
+}
+
+/* ===== TABLET ===== */
+@media (max-width:900px){
+
+  .product-page{
+    flex-direction:column;
+    border-radius:0;
+  }
+
+  #vh-container{
+    height:65vh;       /* visor más alto relativo a pantalla */
+    min-height:500px;  /* nunca demasiado pequeño */
+    max-height:700px;  /* no ocupa toda la pantalla */
+    margin:0;
+    border-radius:0;
+  }
+
+  .product-info{
+    padding:30px 20px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width:480px){
+
+  #vh-container{
+    width:100%;
+    height:60vh;       /* 55% de la pantalla */
+    min-height:400px;  /* suficiente para botones */
+    max-height:650px;
+  }
+
+  .product-info{
+    padding:20px;
+  }
+
+  .buy-button,
+  .save-button{
+    width:100%;
+  }
+
+}
