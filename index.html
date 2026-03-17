@@ -31,8 +31,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const buyButton = document.getElementById("buyButton");
   const editButton = document.getElementById("editButton");
-  buyButton.style.display = "inline-block"; // siempre visible
-  editButton.style.display = "inline-block"; // siempre visible
+  buyButton.style.display = "inline-block";
+  editButton.style.display = "inline-block";
 
   const urlParams = new URLSearchParams(window.location.search);
   const sceneParam = urlParams.get("scene");
@@ -40,18 +40,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (sceneParam) {
     try {
-      const decodedScene = decodeURIComponent(sceneParam);
+      // ✅ AQUÍ ESTÁ LA CLAVE
+      const decodedScene = atob(decodeURIComponent(sceneParam));
+
       const sceneURL = new URL(decodedScene);
       const buyParam = sceneURL.searchParams.get("buyURL");
+
       if (buyParam) {
         sceneBuyURL = decodeURIComponent(buyParam);
       }
     } catch (e) {
-      console.warn("No se pudo decodificar buyURL desde scene:", e);
+      console.warn("Error leyendo buyURL:", e);
     }
   }
 
-  // Botón Comprar
+  // Comprar
   buyButton.onclick = () => {
     if (sceneBuyURL && sceneBuyURL.startsWith("https://")) {
       window.open(sceneBuyURL, "_blank");
@@ -60,14 +63,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Botón Volver a personalizar
+  // Volver a personalizar
   editButton.onclick = () => {
     if (!sceneParam) {
       alert("No hay escena disponible para personalizar");
       return;
     }
-    // Reemplazamos la base URL
-    const newURL = window.location.href.replace("https://product.3dtwins.tech/", "https://scene.3dtwins.tech/");
+
+    const newURL = window.location.href.replace(
+      "https://product.3dtwins.tech/",
+      "https://scene.3dtwins.tech/"
+    );
+
     window.open(newURL, "_blank");
   };
 });
