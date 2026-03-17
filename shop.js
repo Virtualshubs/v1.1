@@ -1,28 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
   const buyButton = document.getElementById("buyButton");
+  buyButton.style.display = "inline-block"; // siempre visible
+
   const urlParams = new URLSearchParams(window.location.search);
-  let base64Scene = urlParams.get("scene");
+  const sceneParam = urlParams.get("scene");
   let sceneBuyURL = '';
 
-  if (base64Scene) {
+  if(sceneParam){
     try {
-      const decodedScene = atob(base64Scene);
-      const params = new URLSearchParams(decodedScene.split('?')[1]);
-      const encodedBuyURL = params.get("buyURL");
-      if (encodedBuyURL) {
-        sceneBuyURL = atob(decodeURIComponent(encodedBuyURL));
+
+      const decodedScene = atob(decodeURIComponent(sceneParam));
+
+      const sceneURL = new URL(decodedScene);
+      const buyParam = sceneURL.searchParams.get("buyURL");
+
+      if(buyParam){
+        sceneBuyURL = atob(decodeURIComponent(buyParam));
       }
     } catch(e){
-      console.warn("No se pudo decodificar la buyURL:", e);
-      sceneBuyURL = '';
+      console.warn("No se pudo decodificar buyURL desde scene:", e);
     }
   }
 
-  // Configuramos el botón
-  buyButton.style.display = 'inline-block';
   buyButton.onclick = () => {
-    if(sceneBuyURL && sceneBuyURL.startsWith('https://')){
-      window.open(sceneBuyURL, '_blank');
+    if(sceneBuyURL && sceneBuyURL.startsWith("https://")){
+      window.open(sceneBuyURL, "_blank");
     } else {
       alert("Producto no disponible");
     }
