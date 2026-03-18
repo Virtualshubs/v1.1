@@ -18,20 +18,21 @@ body{
   box-shadow:0 6px 18px rgba(0,0,0,0.1);
 }
 
-/* ===== VISOR 3D ===== */
-#vh-container{
+#vh-container {
   flex:2;
   background:#eaeaea;
-  margin:20px 0;
-  border-radius:10px;
+  margin:0;
+  border-radius:0;
   position:relative;
-  height:75vh;       /* 70% de la pantalla */
-  min-height:650px;  /* nunca menos de 600px en desktop */
-  max-height:900px;  /* máximo para no tapar datos */
+  height:85vh;       /* más alto */
+  min-height:650px;
+  max-height:1000px;
   overflow:hidden;
-  touch-action:none;  /* evita conflictos de scroll en mobile */
-}
+  touch-action:none;
 
+  transform: scale(1.15);
+  transform-origin: center center;
+}
 /* ===== DATOS DEL PRODUCTO ===== */
 .product-info{
   flex:1;
