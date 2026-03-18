@@ -110,7 +110,6 @@ body{
   margin-top: 10px;
 }
 #editButton {
-  position: absolute;      /* lo posicionamos libremente sobre el visor */
   z-index: 99999;          /* que esté por encima de todo */
   display: inline-block;
   padding: 10px 20px;      /* tamaño cómodo para click */
