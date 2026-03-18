@@ -30,6 +30,7 @@ body{
   max-height:900px;  /* máximo para no tapar datos */
   overflow:hidden;
   touch-action:none;  /* evita conflictos de scroll en mobile */
+  scale: 1.5;
 }
 
 /* ===== DATOS DEL PRODUCTO ===== */
