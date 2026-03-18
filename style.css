@@ -111,16 +111,14 @@ body{
 }
 #editButton {
   position: absolute;      /* lo posicionamos libremente sobre el visor */
-  top: 20px;               /* margen superior */
-  left: 20px;              /* margen izquierdo */
   z-index: 99999;          /* que esté por encima de todo */
   display: inline-block;
   padding: 10px 20px;      /* tamaño cómodo para click */
   background: #28a745;     /* verde, distinto del azul de comprar */
   color: #fff;             /* texto blanco */
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 500;
-  border-radius: 4px;      /* esquinas redondeadas */
+  border-radius: 14px;      /* esquinas redondeadas */
   border: none;            
   cursor: pointer;         /* cambia el cursor al pasar por encima */
   transition: transform 0.2s ease, background 0.2s ease;
