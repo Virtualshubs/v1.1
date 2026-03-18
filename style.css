@@ -21,18 +21,19 @@ body{
 #vh-container {
   flex:2;
   background:#eaeaea;
-  margin:0;
-  border-radius:0;
+  margin:20px 0;
+  border-radius:10px;
   position:relative;
-  height:85vh;       /* más alto */
+  height:75vh;
   min-height:650px;
-  max-height:1000px;
+  max-height:900px;
   overflow:hidden;
   touch-action:none;
 
-  transform: scale(1.15);
-  transform-origin: center center;
-}
+  /* NUEVO ZOOM */
+  transform: scale(1.15);   /* aumenta el 15% */
+  transform-origin: center center;  /* centro de la pantalla */
+}                            
 /* ===== DATOS DEL PRODUCTO ===== */
 .product-info{
   flex:1;
