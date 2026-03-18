@@ -109,6 +109,28 @@ body{
   cursor: pointer;
   margin-top: 10px;
 }
+#editButton {
+  position: absolute;      /* lo posicionamos libremente sobre el visor */
+  top: 20px;               /* margen superior */
+  left: 20px;              /* margen izquierdo */
+  z-index: 99999;          /* que esté por encima de todo */
+  display: inline-block;
+  padding: 10px 20px;      /* tamaño cómodo para click */
+  background: #28a745;     /* verde, distinto del azul de comprar */
+  color: #fff;             /* texto blanco */
+  font-size: 1em;
+  font-weight: 500;
+  border-radius: 4px;      /* esquinas redondeadas */
+  border: none;            
+  cursor: pointer;         /* cambia el cursor al pasar por encima */
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Efecto hover */
+#editButton:hover {
+  background: #218838;
+  transform: scale(1.05);  /* ligero aumento al pasar mouse */
+}
 /* ===== TABLET ===== */
 @media (max-width:900px){
 
