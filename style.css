@@ -139,7 +139,11 @@ body{
     min-height:400px;  /* suficiente para botones */
     max-height:650px;
   }
-
+/* Contenido interno: zoom */
+#vh-container > * {
+  transform: scale(1.3);          /* zoom 20% */
+  transform-origin: center center; /* mantener centrado */
+}   
   .product-info{
     padding:20px;
   }
