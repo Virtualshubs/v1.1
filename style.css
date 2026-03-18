@@ -113,7 +113,7 @@ body{
   z-index: 99999;          /* que esté por encima de todo */
   display: inline-block;
   padding: 10px 20px;      /* tamaño cómodo para click */
-  background: #28a745;     /* verde, distinto del azul de comprar */
+  background: #f5f5f5;     /* verde, distinto del azul de comprar */
   color: #fff;             /* texto blanco */
   font-size: 1.1em;
   font-weight: 500;
