@@ -28,6 +28,7 @@
 </div>
 
 <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const buyButton = document.getElementById("buyButton");
   const editButton = document.getElementById("editButton");
@@ -52,15 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Activar o desactivar botón según existencia de URL
+  // Mostrar u ocultar botón de comprar según existencia de URL
   if (!sceneBuyURL || !sceneBuyURL.startsWith("https://")) {
-    buyButton.disabled = true; // desactiva el botón
-    buyButton.style.opacity = 0.5; // visualmente se ve desactivado
-    buyButton.style.cursor = "not-allowed";
-  } else {
-    buyButton.disabled = false; // activado por si acaso
-    buyButton.style.opacity = 1;
-    buyButton.style.cursor = "pointer";
+    buyButton.style.display = "none"; // ocultamos botón
   }
 
   // Comprar
@@ -89,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.open(newURL, "_blank");
   };
 });
+</script>
 </script>
 
 </body>
