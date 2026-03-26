@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (sceneBuyURL) {
     // Nos aseguramos de que no termine en "/" para concatenar correctamente
     const baseURL = sceneBuyURL.endsWith('/') ? sceneBuyURL.slice(0, -1) : sceneBuyURL;
-    finalURL = `${baseURL}/personalizado?scene=${encodeURIComponent(sceneParam)}`;
+    finalURL = `${baseURL}/products/personalizado?scene=${encodeURIComponent(sceneParam)}`;
   }
 
   // Configuramos acción del botón
