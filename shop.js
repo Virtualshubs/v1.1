@@ -23,6 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+    // Construimos la URL final con /personalizado y scene base64
+  let finalURL = '';
+  if (sceneBuyURL) {
+    // Nos aseguramos de que no termine en "/" para concatenar correctamente
+    const baseURL = sceneBuyURL.endsWith('/') ? sceneBuyURL.slice(0, -1) : sceneBuyURL;
+    finalURL = `${baseURL}/personalizado?scene=${encodeURIComponent(sceneParam)}`;
+  }
+
   // Configuramos acción del botón
   buyButton.onclick = () => {
     if (sceneBuyURL && sceneBuyURL.startsWith("https://")) {
