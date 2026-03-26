@@ -28,6 +28,7 @@
 </div>
 
 <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const buyButton = document.getElementById("buyButton");
   const editButton = document.getElementById("editButton");
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (sceneParam) {
     try {
-      // ✅ AQUÍ ESTÁ LA CLAVE
+      // ✅ Decodificamos la escena
       const decodedScene = atob(decodeURIComponent(sceneParam));
 
       const sceneURL = new URL(decodedScene);
@@ -54,10 +55,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Comprar
+  // Comprar (modificado para URL final /personalizado?scene=<base64>)
   buyButton.onclick = () => {
     if (sceneBuyURL && sceneBuyURL.startsWith("https://")) {
-      window.open(sceneBuyURL, "_blank");
+      const baseURL = sceneBuyURL.endsWith('/') ? sceneBuyURL.slice(0, -1) : sceneBuyURL;
+      const finalBuyURL = `${baseURL}/personalizado?scene=${encodeURIComponent(sceneParam)}`;
+      window.open(finalBuyURL, "_blank");
     } else {
       alert("Producto no disponible");
     }
@@ -78,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.open(newURL, "_blank");
   };
 });
+</script>
 </script>
 
 </body>
