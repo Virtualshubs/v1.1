@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "https://scene.3dtwins.tech/"
     );
 
-    window.open(newURL, "_blank");
+   
+    window.location.href = newURL;
   };
 });
