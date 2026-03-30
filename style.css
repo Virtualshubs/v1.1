@@ -8,6 +8,7 @@ body {
   justify-content: center; /* centra horizontalmente */
   align-items: center;     /* centra verticalmente */
   min-height: 100vh;       /* asegura que tome toda la altura de la pantalla */
+   overflow:hidden;
 }
 /* ===== CONTENEDOR PRINCIPAL ===== */
 .product-page{
