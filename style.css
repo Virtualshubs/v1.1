@@ -142,7 +142,7 @@ body {
   }
 
   #vh-container{
-    height: 97vh;       /* visor más alto relativo a pantalla */
+    height: 100%;       /* visor más alto relativo a pantalla */
     min-height:500px;  /* nunca demasiado pequeño */
     max-height:700px;  /* no ocupa toda la pantalla */
     margin:0;
