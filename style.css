@@ -138,7 +138,6 @@ body {
 }
 
 
-
 @container (max-width: 900px){
 
   .product-page{
@@ -152,6 +151,12 @@ body {
     max-height: 70vh;
     margin:0;
     border-radius:0;
+  }
+
+
+  #vh-container > * {
+    transform: scale(1.4);
+    transform-origin: center center;
   }
 
   .product-info{
@@ -174,6 +179,11 @@ body {
     max-height: 65vh;
   }
 
+  #vh-container > * {
+    transform: scale(1.48);
+    transform-origin: center center;
+  }
+
   .product-info{
     padding:10px;
   }
@@ -182,4 +192,14 @@ body {
   .save-button{
     width:100%;
   }
+}
+
+
+@container (max-width: 380px){
+
+  #vh-container > * {
+    transform: scale(1.55);
+    transform-origin: center center;
+  }
+
 }
