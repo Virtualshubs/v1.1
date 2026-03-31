@@ -1,16 +1,17 @@
-/* ===== BODY ===== */
+
 body {
   margin: 0;
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: transparent; /* opcional, un fondo neutro */
+  background-color: transparent;
   color: #111;
   display: flex;
-  justify-content: center; /* centra horizontalmente */
-  align-items: center;     /* centra verticalmente */
-  min-height: 100vh;       /* asegura que tome toda la altura de la pantalla */
-   overflow:hidden;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-/* ===== CONTENEDOR PRINCIPAL ===== */
+
+
 .product-page{
   display:flex;
   width:100%;
@@ -20,29 +21,31 @@ body {
   border-radius:12px;
   overflow:hidden;
   box-shadow:0 6px 18px rgba(0,0,0,0.1);
+  container-type: inline-size;
 }
 
-/* Contenedor sigue igual, no toca layout */
+
 #vh-container {
   flex: 2;
   background: #eaeaea;
   margin: 20px 10px;
   border-radius: 10px;
   position: relative;
-  height: 75vh;
-  min-height: 650px;
-  max-height: 900px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 80vh;
   overflow: hidden;
   touch-action: none;
 }
 
-/* Contenido interno: zoom */
+
 #vh-container > * {
-  transform: scale(1.3);          /* zoom 20% */
-  transform-origin: center center; /* mantener centrado */
+  transform: scale(1.3);
+  transform-origin: center center;
   border-radius: 10px;
-}                          
-/* ===== DATOS DEL PRODUCTO ===== */
+}
+
+
 .product-info{
   flex:1;
   padding:40px;
@@ -51,20 +54,20 @@ body {
   gap:20px;
 }
 
-/* TITULO */
+
 .product-info h1{
   font-size:2em;
   margin:0;
 }
 
-/* DESCRIPCIÓN */
+
 .product-info p{
   font-size:1em;
   color:#555;
   margin:0;
 }
 
-/* COLORES */
+
 .colors-container{
   display:flex;
   gap:10px;
@@ -84,7 +87,6 @@ body {
   border:2px solid #111;
 }
 
-/* BOTONES */
 .buy-button,
 .save-button{
   padding:12px;
@@ -104,6 +106,7 @@ body {
   color:#111;
   border:1px solid #111;
 }
+
 #buyButton {
   display: inline-block;
   padding: 10px 20px;
@@ -114,39 +117,63 @@ body {
   cursor: pointer;
   margin-top: 10px;
 }
+
 #editButton {
-  z-index: 99999;          /* que esté por encima de todo */
+  z-index: 99999;
   display: inline-block;
-  padding: 10px 20px;      /* tamaño cómodo para click */
-  background: #f5f5f5;     /* verde, distinto del azul de comprar */
-  color: black;             /* texto blanco */
+  padding: 10px 20px;
+  background: #f5f5f5;
+  color: black;
   font-size: 1.1em;
   font-weight: 500;
-  border-radius: 14px;      /* esquinas redondeadas */
+  border-radius: 14px;
   border: none;            
-  cursor: pointer;         /* cambia el cursor al pasar por encima */
+  cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-/* Efecto hover */
 #editButton:hover {
-  background: #218838;
-  transform: scale(1.05);  /* ligero aumento al pasar mouse */
+  background: #ddd;
+  transform: scale(1.05);
 }
-/* ===== TABLET ===== */
-@media (max-width:900px){
+
+
+
+@container (max-width: 900px){
+
+  .product-page{
+    flex-direction:column;
+    border-radius:0;
+  }
 
   #vh-container{
     width:100%;
-    height:95vh;       /* 55% de la pantalla */
-    min-height:400px;  /* suficiente para botones */
-    max-height:650px;
+    aspect-ratio: 1 / 1;
+    max-height: 70vh;
+    margin:0;
+    border-radius:0;
   }
-/* Contenido interno: zoom */
-#vh-container > * {
-  transform: scale(1.3);          /* zoom 20% */
-  transform-origin: center center; /* mantener centrado */
-}   
+
+  .product-info{
+    padding:20px;
+  }
+
+  .buy-button,
+  .save-button{
+    width:100%;
+  }
+}
+
+
+
+@container (max-width: 480px){
+
+  #vh-container{
+    width:100%;
+    aspect-ratio: 9 / 14; 
+    max-height: 65vh;
+  }
+
   .product-info{
     padding:10px;
   }
@@ -155,29 +182,4 @@ body {
   .save-button{
     width:100%;
   }
-
-}
-/* ===== MOBILE ===== */
-@media (max-width:480px){
-
-  #vh-container{
-    width:100%;
-    height:95vh;       /* 55% de la pantalla */
-    min-height:400px;  /* suficiente para botones */
-    max-height:650px;
-  }
-/* Contenido interno: zoom */
-#vh-container > * {
-  transform: scale(1.3);          /* zoom 20% */
-  transform-origin: center center; /* mantener centrado */
-}   
-  .product-info{
-    padding:10px;
-  }
-
-  .buy-button,
-  .save-button{
-    width:100%;
-  }
-
 }
