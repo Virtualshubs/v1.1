@@ -183,7 +183,6 @@ body {
   #vh-container{
      flex: 2;
     width:100%;
-    aspect-ratio: 1 / 1; 
     max-height: 65vh; /* 🔥 antes 65 */
   }
 
@@ -217,7 +216,6 @@ body {
     #vh-container{
      flex: 2;
     width:100%;
-    aspect-ratio: 1 / 1; 
     max-height: 65vh; /* 🔥 antes 65 */
   }
 
