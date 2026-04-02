@@ -183,7 +183,7 @@ body {
   #vh-container{
     width:100%;
     aspect-ratio: 1 / 1; 
-    max-height: 55vh; /* 🔥 antes 65 */
+    max-height: 65vh; /* 🔥 antes 65 */
   }
 
   #vh-container > * {
@@ -194,6 +194,7 @@ body {
   .product-info{
     padding:12px;
     gap:10px;
+     scale:0.8;
   }
 
   .product-info h1{
@@ -220,6 +221,7 @@ body {
     .product-info{
     padding:10px;
     gap:5px;
+      scale:0.8;
   }
 
   .product-info h1{
