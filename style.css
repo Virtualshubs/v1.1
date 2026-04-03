@@ -190,18 +190,18 @@ body {
   }
 
   #vh-container > * {
-    transform: scale(1.3); /* 🔥 un pelín más de zoom */
+    transform: scale(1.5); /* 🔥 un pelín más de zoom */
   }
 
   .product-info{
-    padding:12px;
-    gap:8px; /* 🔥 menos aire vertical */
-    max-width: 500px; /* 🔥 evita líneas largas */
+    padding:5px;
+    gap:3px; /* 🔥 menos aire vertical */
+    max-width: 400px; /* 🔥 evita líneas largas */
     margin: 0 auto; /* 🔥 centra bloque */
   }
 
   .product-info h1{
-    font-size:1.2em;
+    font-size:1em;
     line-height:1.2;
   }
 
@@ -216,8 +216,8 @@ body {
   }
 
   .color-circle{
-    width:20px;
-    height:20px;
+    width:10px;
+    height:10px;
   }
 
   /* 🔥 botones más compactos */
@@ -234,17 +234,17 @@ body {
 @container (max-width: 380px){
 
   #vh-container > * {
-    transform: scale(1.35);
+    transform: scale(1.55);
   }
  .product-info{
-    padding:10px;
-    gap:8px; /* 🔥 menos aire vertical */
-    max-width: 500px; /* 🔥 evita líneas largas */
+    padding: 1px;
+    gap: 3px; /* 🔥 menos aire vertical */
+    max-width: 400px; /* 🔥 evita líneas largas */
     margin: 0 auto; /* 🔥 centra bloque */
   }
 
   .product-info h1{
-    font-size:1.2em;
+    font-size:1em;
     line-height:1.2;
   }
 
@@ -259,8 +259,8 @@ body {
   }
 
   .color-circle{
-    width:15px;
-    height:15px;
+    width:10px;
+    height:10px;
   }
 
   /* 🔥 botones más compactos */
