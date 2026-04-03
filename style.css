@@ -248,6 +248,9 @@ body {
   #vh-container{
     margin:0 !important;
     padding:0 !important;
+    width:100%;
+    max-height: none;
+    flex: 1 1 auto;
   }
 
   #vh-container > * {
@@ -261,8 +264,10 @@ body {
   }
 
   .product-info{
-    padding:5px !important;
+    padding:4px !important;
     gap:3px !important;
+    width:100%;
+    flex: 0 0 auto;
   }
 
   .product-info h1{
