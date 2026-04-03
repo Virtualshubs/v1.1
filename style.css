@@ -33,7 +33,7 @@ body {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  max-height: 80vh;
+  max-height: 90%;
   overflow: hidden;
   touch-action: none;
 }
