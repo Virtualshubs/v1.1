@@ -194,15 +194,36 @@ body {
   }
 
   .product-info{
-    padding:14px;
-    gap:12px;
+    padding:12px;
+    gap:8px; /* 🔥 menos aire vertical */
+    max-width: 500px; /* 🔥 evita líneas largas */
+    margin: 0 auto; /* 🔥 centra bloque */
   }
 
   .product-info h1{
-    font-size:1.25em;
+    font-size:1.2em;
+    line-height:1.2;
   }
 
   .product-info p{
+    font-size:0.85em;
+    line-height:1.4;
+  }
+
+  /* 🔥 clave: compactar colores */
+  .colors-container{
+    gap:6px;
+  }
+
+  .color-circle{
+    width:20px;
+    height:20px;
+  }
+
+  /* 🔥 botones más compactos */
+  .buy-button,
+  .save-button{
+    padding:10px;
     font-size:0.9em;
   }
 }
@@ -215,17 +236,37 @@ body {
   #vh-container > * {
     transform: scale(1.35);
   }
-
-  .product-info{
-    padding:12px;
-    gap:10px;
+ .product-info{
+    padding:10px;
+    gap:8px; /* 🔥 menos aire vertical */
+    max-width: 500px; /* 🔥 evita líneas largas */
+    margin: 0 auto; /* 🔥 centra bloque */
   }
 
   .product-info h1{
-    font-size:1.1em;
+    font-size:1.2em;
+    line-height:1.2;
   }
 
   .product-info p{
     font-size:0.85em;
+    line-height:1.4;
+  }
+
+  /* 🔥 clave: compactar colores */
+  .colors-container{
+    gap:3px;
+  }
+
+  .color-circle{
+    width:15px;
+    height:15px;
+  }
+
+  /* 🔥 botones más compactos */
+  .buy-button,
+  .save-button{
+    padding:10px;
+    font-size:0.9em;
   }
 }
