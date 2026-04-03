@@ -40,7 +40,7 @@ body {
 
 
 #vh-container > * {
-  transform: scale(1.3);
+  transform: scale(1.5);
   transform-origin: center center;
   border-radius: 10px;
 }
