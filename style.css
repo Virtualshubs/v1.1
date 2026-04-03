@@ -196,8 +196,9 @@ body {
   .product-info{
     padding:5px;
     gap:3px; /* 🔥 menos aire vertical */
-    max-width: 400px; /* 🔥 evita líneas largas */
+ 
     margin: 0 auto; /* 🔥 centra bloque */
+      max-width: 35ch; /* 🔥 controla altura del texto */
   }
 
   .product-info h1{
@@ -262,7 +263,9 @@ body {
     width:10px;
     height:10px;
   }
-
+.product-info p {
+  max-width: 35ch; /* 🔥 controla altura del texto */
+}
   /* 🔥 botones más compactos */
   .buy-button,
   .save-button{
