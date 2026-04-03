@@ -40,7 +40,7 @@ body {
 
 
 #vh-container > * {
-  transform: scale(1.5);
+  transform: scale(1.65);
   transform-origin: center center;
   border-radius: 10px;
 }
@@ -51,7 +51,7 @@ body {
   padding:20px;
   display:flex;
   flex-direction:column;
-  gap:20px;
+  gap:10px;
 }
 
 
@@ -156,7 +156,7 @@ body {
   }
 
   #vh-container > * {
-    transform: scale(1.5); /* 🔥 tu zoom */
+    transform: scale(1.75); /* 🔥 tu zoom */
     transform-origin: center center;
   }
 
@@ -193,7 +193,7 @@ body {
   }
 
   #vh-container > * {
-    transform: scale(1.55); /* 🔥 mantenemos zoom alto */
+    transform: scale(1.75); /* 🔥 mantenemos zoom alto */
     transform-origin: center center;
   }
 
